@@ -11,7 +11,7 @@ ensure to follow these instructions to set upa and run succefully.
 * Ensure gradle is installed, synched and all dependencies donwloaded. 
 * Run this command to clone into your local repo
 ```
-git clone https://github.com/OderoOluoch/newsPortal.git
+git clone https://github.com/cyruswere/NewsPortal.git
 
 ```
 
@@ -146,4 +146,4 @@ To help grow and make this product better, reach out to [email](mailto:oderoluoc
 ### LICENSE
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](/LICENSE)
 
-Copyright &copy; 2021 **[Odero Oluoch](www.github.com/OderoOluoch)**
+Copyright &copy; 2021 **[Cyrus Were](https://github.com/cyruswere)**
