@@ -118,10 +118,10 @@ $ gradle run
         | ``/news/id/departmets``              | GET  | Url to view all the departments that are associated with a news briefing item. 
 
 
-* when testing with postma, Use  
+* when testing with postman, Use  
   
 ```
-https://oderoportal.herokuapp.com/
+https://news-portal3.herokuapp.com/
 
 ```
 
@@ -142,7 +142,7 @@ https://oderoportal.herokuapp.com/
 - It is open for critique and improvements
 
 ## Support and contact details
-To help grow and make this product better, reach out to [email](mailto:oderoluoch@gmail.com).
+To help grow and make this product better, reach out to [email](mailto:cyruswere01@gmail.com).
 ### LICENSE
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](/LICENSE)
 
