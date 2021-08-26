@@ -29,7 +29,7 @@ public class App {
         Sql2oDepartmentsDao departmentDao;
 //        Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/news_portal",  "sirkadima", "kadima123");
         Sql2o sql2o = new Sql2o("jdbc:postgresql://ec2-54-147-93-73.compute-1.amazonaws.com:5432/d724gmkjp7qlso",
-                "fmyplprxmecilw", "455a8046dee64b8f2ea283a2554ae4c3ee1589c2e50720419e9a314788fc688d");
+                "fmyplprxmecilw", "8b8b94e4-807b-4c48-ad10-753c9125b986");
 
 
         userDao = new Sql2oUsersDao(sql2o);
