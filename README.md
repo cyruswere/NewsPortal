@@ -149,4 +149,4 @@ To help grow and make this product better, reach out to [email](mailto:cyruswere
 ### LICENSE
 [![License: ISC](https://img.shields.io/badge/License-ISC-yellow.svg)](/LICENSE)
 
-Copyright &copy; 2021 **[Cyrus Were](https://github.com/cyruswere)**
+Copyright &copy; 2021 **[Cyrus Odero](https://github.com/cyruswere)**
