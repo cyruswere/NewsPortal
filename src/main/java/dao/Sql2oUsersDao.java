@@ -1,5 +1,7 @@
 package dao;
 
+import models.Department;
+import models.News;
 import models.User;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -7,15 +9,14 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 
-public class Sql2oUserDao implements UserDao{
+public class Sql2oUsersDao implements IUsersDao{
+
     private final Sql2o sql2o;
-    public Sql2oUserDao(Sql2o sql2o){
-        this.sql2o = sql2o;
-    }
+    public Sql2oUsersDao(Sql2o sql2o) { this.sql2o = sql2o; }
 
     @Override
     public void add(User user) {
-        String sql = "INSERT INTO users (name, deptId) VALUES (:name , :deptId)"; //if you change your model, be sure to update here as well!
+        String sql = "INSERT INTO users(name, title, roles, associated_department) VALUES (:name, :title, :roles, :associated_department);";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(user)
@@ -25,6 +26,10 @@ public class Sql2oUserDao implements UserDao{
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
+    }
+
+    @Override
+    public void addUserNewsDepartment(User user, News news, Department department) {
 
     }
 
@@ -36,7 +41,6 @@ public class Sql2oUserDao implements UserDao{
         }
     }
 
-
     @Override
     public User findById(int id) {
         try (Connection con = sql2o.open()) {
@@ -44,6 +48,16 @@ public class Sql2oUserDao implements UserDao{
                     .addParameter("id", id)
                     .executeAndFetchFirst(User.class);
         }
+    }
+
+    @Override
+    public List<Department> getUserDepartment(int blackout_id) {
+        return null;
+    }
+
+    @Override
+    public List<User> getUserNews(int blackout_id) {
+        return null;
     }
 
     @Override
@@ -56,7 +70,6 @@ public class Sql2oUserDao implements UserDao{
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
-
     }
 
     @Override
@@ -68,5 +81,4 @@ public class Sql2oUserDao implements UserDao{
             System.out.println(ex);
         }
     }
-
 }

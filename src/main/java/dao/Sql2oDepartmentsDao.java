@@ -9,60 +9,61 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 
-public class Sql2oNewsDao implements INewsDao{
+public class Sql2oDepartmentsDao implements IDepartmentsDao{
 
     private final Sql2o sql2o;
-    public Sql2oNewsDao(Sql2o sql2o) { this.sql2o = sql2o; }
+    public Sql2oDepartmentsDao(Sql2o sql2o) { this.sql2o = sql2o; }
 
     @Override
-    public void add(News news) {
-        String sql = "INSERT INTO news(header, content, written_by) VALUES (:header, :content, :written_by);";
+    public void add(Department department) {
+        String sql = "INSERT INTO departments(name, description, number_of_employees) VALUES (:name, :description, :number_of_employees);";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
-                    .bind(news)
+                    .bind(department)
                     .executeUpdate()
                     .getKey();
-            news.setId(id);
+            department.setId(id);
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
-    }
-
-    @Override
-    public void addNewsUserDepartment(User user, News news, Department department) {
 
     }
 
     @Override
-    public List<News> getAll() {
+    public void addDepartmentNewsUser(User user, News news, Department department) {
+
+    }
+
+    @Override
+    public List<Department> getAll() {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM news")
-                    .executeAndFetch(News.class);
+            return con.createQuery("SELECT * FROM departments;")
+                    .executeAndFetch(Department.class);
         }
     }
 
     @Override
-    public News findById(int id) {
+    public Department findById(int id) {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM news WHERE id = :id")
+            return con.createQuery("SELECT * FROM departments WHERE id = :id;")
                     .addParameter("id", id)
-                    .executeAndFetchFirst(News.class);
+                    .executeAndFetchFirst(Department.class);
         }
     }
 
     @Override
-    public List<User> getNewsUser(int blackout_id) {
+    public List<User> getDepartmentUser(int blackout_id) {
         return null;
     }
 
     @Override
-    public List<Department> getNewsDepartment(int blackout_id) {
+    public List<News> getDepartmentNews(int blackout_id) {
         return null;
     }
 
     @Override
     public void deleteById(int id) {
-        String sql = "DELETE from news WHERE id=:id";
+        String sql = "DELETE from departments WHERE id=:id";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("id", id)
@@ -74,7 +75,7 @@ public class Sql2oNewsDao implements INewsDao{
 
     @Override
     public void clearAll() {
-        String sql = "DELETE from news";
+        String sql = "DELETE from departments";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql).executeUpdate();
         } catch (Sql2oException ex) {
