@@ -2,6 +2,9 @@
 
 A Java Spark back end news Portal API.
 
+# Author
+CYRUS ODERO WERE
+
 ## Getting Started
 
 ensure to follow these instructions to set upa and run succefully. 
