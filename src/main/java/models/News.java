@@ -1,36 +1,27 @@
 package models;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class News {
-    private int id;
-    private String header;
+    private String title;
     private String content;
-    private String written_by;
+    private int  authorId;
+    private int id;
 
 
-    public News(String header, String content, String written_by) {
-        this.header = header;
+    public News(String title, String content,int authorId){
+        this.title = title;
         this.content = content;
-        this.written_by = written_by;
-        this.id = id;
+        this.authorId = authorId;
     }
 
-    public int getId() {
-        return id;
+
+    public String getTitle() {
+        return title;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getHeader() {
-        return header;
-    }
-
-    public void setHeader(String header) {
-        this.header = header;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
@@ -41,12 +32,20 @@ public class News {
         this.content = content;
     }
 
-    public String getWritten_by() {
-        return written_by;
+    public int getAuthorId() {
+        return authorId;
     }
 
-    public void setWritten_by(String written_by) {
-        this.written_by = written_by;
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 
@@ -55,12 +54,11 @@ public class News {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         News news = (News) o;
-        return id == news.id && header.equals(news.header) && content.equals(news.content) && written_by.equals(news.written_by);
+        return authorId == news.authorId && id == news.id &&  title.equals(news.title) && content.equals(news.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, header, content, written_by);
+        return Objects.hash(title, content, authorId, id);
     }
-
 }

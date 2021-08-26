@@ -1,20 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.cyrus</groupId>
-    <artifactId>NewsPortal</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.odero.app</groupId>
+    <artifactId>oderoportal</artifactId>
+    <version>1.0</version>
 
-
-
-
-
-
-    <properties>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
     <dependencies>
         <!-- We need to list out ALL dependencies our project needs. If you have dependencies not listed here, but sure to add them -->
         <dependency>
@@ -83,12 +76,13 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>NewsPortal</appName>
+                    <appName>oderoportal</appName>
                     <processTypes>
-                        <web>java -jar target/NewsPortal-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/oderoportal-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
 </project>
