@@ -6,6 +6,11 @@
     <artifactId>NewsPortal</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+
+
+
+
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
@@ -78,9 +83,9 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>newsportal</appName>
+                    <appName>NewsPortal</appName>
                     <processTypes>
-                        <web>java -jar target/newsportal-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/NewsPortal-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
