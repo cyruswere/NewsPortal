@@ -28,7 +28,7 @@ public class App {
         Sql2oUsersDao userDao;
         Sql2oDepartmentsDao departmentDao;
 //        Sql2o sql2o = new Sql2o("jdbc:postgresql://localhost:5432/news_portal",  "sirkadima", "kadima123");
-        Sql2o sql2o = new Sql2o("jdbc:postgresql://ec2-54-147-93-73.compute-1.amazonaws.com:5432/d724gmkjp7qlso",
+        Sql2o sql2o = new Sql2o("jdbc: postgres://izcqrgofbypeia:5bab05953d63b28959950be00ad9770c0dbdc6399ef52de3e7bba80be86a5a2a@ec2-54-156-60-12.compute-1.amazonaws.com:5432/d9arb2bvef4v5o",
                 "fmyplprxmecilw", "8b8b94e4-807b-4c48-ad10-753c9125b986");
 
 
